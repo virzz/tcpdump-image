@@ -1,0 +1,12 @@
+version: "3"
+services:
+  tcpdump:
+    build: .
+    image: ghcr.io/virzz/tcpdump
+    environment:
+      NAME: test
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./data:/data
